@@ -26,6 +26,16 @@ if (!$db_select) {
 
   if(mysqli_num_rows($result)==1){
       echo " You Have Successfully Logged in";
+	$query = "SELECT * FROM users"; //You don't need a ; like you do in SQL
+	$result = mysqli_query($conn,$query);
+
+	echo "<table>"; // start a table tag in the HTML
+
+	while($row = mysqli_fetch_array($result)){   //Creates a loop to loop through results
+	echo "<tr><td>" . $row['username'] . "</td><td>" . $row['email'] . "</td></tr>";  //$row['index'] the index here is a field name
+	}
+
+	echo "</table>"; //Close the table in HTML
       exit();
   }
   else{
