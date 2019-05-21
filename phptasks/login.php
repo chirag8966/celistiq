@@ -32,7 +32,9 @@ if (!$db_select) {
 	echo "<table>"; // start a table tag in the HTML
 
 	while($row = mysqli_fetch_array($result)){   //Creates a loop to loop through results
-	echo "<tr><td>" . $row['username'] . "</td><td>" . $row['email'] . "</td></tr>";  //$row['index'] the index here is a field name
+	echo "<tr><td>" .$row['username'] . "</td><td>" .$row['email'] . "</td><td>" .$row['contact'] . "</td></tr>";  
+
+	//$row['index'] the index here is a field name
 	}
 
 	echo "</table>"; //Close the table in HTML
